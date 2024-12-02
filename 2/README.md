@@ -5,3 +5,5 @@ To build Wasm binary, do e.g.
 ```
 zig build-exe 2-2.zig -target wasm32-freestanding -fno-entry --export=solve --export=get_arena
 ```
+
+This example also features import handling in urwasm: I needed to debug something so I added a `print` import. Imports are provided in form of a map from pairs of cords to gates from `(list coin-wasm)` to Lia scripts that return `(list coin-wasm)`
