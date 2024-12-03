@@ -4,23 +4,13 @@
 %-  roll  :_  add
 ^-  (list @)
 %+  rash  input-cord
-|-
-;~  pose
-  (full (easy ~))
-  ;~(plug mul-rule (knee *(list @) |.(^$)))
-  ;~(pfix next (knee *(list @) |.(^$)))
-==
+%+  ifix  [. .]:(star ;~(less mul-rule next))
+(more (star ;~(less mul-rule next)) mul-rule)
 ::
 ++  mul-rule
+  %+  cook  mul
   ;~  pfix
     (jest 'mul(')
-    %+  cook  mul
-    ;~  plug
-      dem
-      ;~  pfix
-        com
-        ;~(sfix dem par)
-      ==
-    ==
+    ;~(sfix ;~((glue com) dem dem) par)
   ==
 --

@@ -5,7 +5,8 @@
 %-  roll  :_  add-commands
 ^-  (list command)
 %+  rash  input-cord
-commands-noise
+%+  ifix  [. .]:(star ;~(less command-rule next))
+(more (star ;~(less command-rule next)) command-rule)
 ::
 +$  command
   $%  [%do ~]
@@ -13,14 +14,6 @@ commands-noise
       [%mul p=@ q=@]
   ==
 ::
-++  commands-noise
-  %+  knee  *(list command)
-  |.  ~+
-  ;~  pose
-    (full (easy ~))
-    ;~(plug command-rule commands-noise)
-    ;~(pfix next commands-noise)
-  ==
 ++  command-rule
   %+  cook  |=(command +<)
   ;~  pose
@@ -30,17 +23,10 @@ commands-noise
   ==
 ::
 ++  mul-rule
-  %+  cook  |=(command +<)
+  %+  stag  %mul
   ;~  pfix
     (jest 'mul(')
-    %+  stag  %mul
-    ;~  plug
-      dem
-      ;~  pfix
-        com
-        ;~(sfix dem par)
-      ==
-    ==
+    ;~(sfix ;~((glue com) dem dem) par)
   ==
 ::
 ++  add-commands
