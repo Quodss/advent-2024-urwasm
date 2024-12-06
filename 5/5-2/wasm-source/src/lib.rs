@@ -43,7 +43,9 @@ pub fn solve(file: Vec<u8>) -> u32
         if !update_correct {
             //  assume that rules form DAG
             //
-            update.sort_unstable_by(|&a, &b| {order_pages(a, b, &rules, &mut orderings)});
+            update.sort_unstable_by(|&a, &b| {
+                order_pages(a, b, &rules, &mut orderings)
+            });
             sum += update[update.len() / 2];
         }
     }
@@ -72,8 +74,8 @@ fn order_pages(a: u32,
     }
 
     for rule in rules {
-        if a == rule.0
-            && order_pages(rule.1, b, rules, orderings) == Ordering::Less {
+        if a == rule.0 
+        && order_pages(rule.1, b, rules, orderings) == Ordering::Less {
             orderings.insert((b, a));
             return Ordering::Less;
         }
@@ -81,7 +83,7 @@ fn order_pages(a: u32,
 
     for rule in rules {
         if a == rule.1
-            && order_pages(rule.0, b, rules, orderings) == Ordering::Greater {
+        && order_pages(rule.0, b, rules, orderings) == Ordering::Greater {
             orderings.insert((a, b));
             return Ordering::Greater;
         }
