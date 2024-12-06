@@ -42,15 +42,14 @@ func solve(file []uint8) uint32 {
 
 	var count uint32
 	count = 0
-
+	file_32 := make([]uint32, len(file))
+	
 	for o_y := 0; o_y < height; o_y++ {
 		for o_x := 0; o_x < width; o_x++ {
 			o_idx := (height+1) * o_y + o_x
 			if file[o_idx] == '#' || o_idx == guard_start_idx {
 				continue
 			}
-
-			file_32 := make([]uint32, len(file))
 
 			for i, v := range file {
 				file_32[i] = uint32(v)
