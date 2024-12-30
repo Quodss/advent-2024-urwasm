@@ -4,18 +4,20 @@
 |=  input=wain
 |^  ^-  @
 =/  input-cord=cord  (of-wain:format input)
-%-  yield-need:wasm
-%^  (run-once:wasm @)  [bin ~]  %$
-=/  m  (script:lia-sur:wasm @)
+%-  yield-need:wasm  =<  -
+%^  (run-once:wasm @ *)  [bin `~]  %$
+=/  m  (script:lia-sur:wasm @ *)
 ^-  form:m
-=,  wasm
+=/  arr  (arrows:wasm *)
+=,  arr
 ;<  input=@  try:m  (lower-array 4 input-cord)
 ?<  =(input 0)
 (call-1 'part2' input ~)
 ::
 ++  lower-array
-  =/  m  (script:lia-sur:wasm @)
-  =,  wasm
+  =/  m  (script:lia-sur:wasm @ *)
+  =/  arr  (arrows:wasm *)
+  =,  arr
   |=  [id=@ values=cord]  ::  align = 0, __setU8 inlined
   ^-  form:m
   =/  length=@  (met 3 values)
