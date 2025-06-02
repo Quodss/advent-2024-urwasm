@@ -2,7 +2,7 @@ UPDATE: The presented solutions use older version of urwasm that had different t
 
 Urwasm is now a part of `%base` desk distribution and the jets are included in the Vere binary release, so copying `/sur/wasm`, `/lib/wasm` and `/mar/wasm/hoon` from `%base` to your desk (or adding generators to `%base` desk instead) is enough.
 
-===================================================================================
+---
 
 These solutions to AoC puzzles in Hoon use [`urwasm`](https://github.com/Quodss/urwasm/tree/main).
 
